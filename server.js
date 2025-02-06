@@ -3,6 +3,9 @@ const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 3000;
 
+//7. import router
+const moviesRouter = require('./routes/movies')
+
 //4. import middleware
 const errorsHandler = require('./middlewares/errorsHandler');
 const notFound = require('./middlewares/notFound');
@@ -17,6 +20,9 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.send('Entry point');
 });
+
+//8. usare il router
+app.use('/api/movies', moviesRouter)
 
 //5. richiamo i middleware importati
 app.use(errorsHandler);
