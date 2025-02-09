@@ -2,7 +2,11 @@ const connection = require('../data/db')
 
 //index
 const index = (req, res) => {
-  const sql = 'SELECT * FROM movies';
+  const sql = ` SELECT M.*, ROUND(AVG(R.vote),1) AS average_vote
+  FROM movies M
+  LEFT JOIN reviews R ON M.id = R.movie_id
+  GROUP BY M.id
+  ORDER BY M.id`;
 
   connection.query(sql, (err, result) => {
     if (err) return res.status(500).json({ error: 'Errore query al database' });

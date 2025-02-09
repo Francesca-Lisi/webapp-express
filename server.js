@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 3000;
+const cors = require('cors')
+
+//9.CORS
+app.use(cors({ origin: 'http://localhost:5173' }))
 
 //7. import router
 const moviesRouter = require('./routes/movies')
