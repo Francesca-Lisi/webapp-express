@@ -32,3 +32,8 @@ app.use(notFound);
 app.listen(port, () => {
   console.log(`Server in ascolto alla porta ${port}`)
 })
+
+
+
+// start": "node --env-file=.env  server.js",
+//     "dev": "node --env-file=.env --watch server.js"
