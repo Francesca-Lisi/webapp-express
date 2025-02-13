@@ -9,4 +9,7 @@ router.get('/:id', movieController.show)
 //nuova recensione
 router.post('/:id/reviews', movieController.storeReview)
 
+//nuovo film con la gestione immagine (installare multer)
+router.post('/', movieController.store)
+
 module.exports = router;

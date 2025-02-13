@@ -73,8 +73,14 @@ const storeReview = (req, res) => {
   })
 }
 
+
+const store = (req, res) => {
+  res.json({ message: 'Aggiungo un nuovo film' })
+}
+
 module.exports = {
   index,
   show,
-  storeReview
+  storeReview,
+  store
 }
